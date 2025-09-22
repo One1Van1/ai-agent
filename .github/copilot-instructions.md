@@ -3,12 +3,14 @@
 This is a NestJS project with TypeScript configuration using Yarn as the package manager.
 
 ## Project Structure
+
 - `src/` - Source code
-- `test/` - Test files  
+- `test/` - Test files
 - `dist/` - Compiled output
 - `node_modules/` - Dependencies
 
 ## Development Guidelines
+
 - Use TypeScript for all code
 - Follow NestJS conventions and decorators
 - Use Yarn for package management (not npm)
@@ -16,6 +18,7 @@ This is a NestJS project with TypeScript configuration using Yarn as the package
 - Write tests for new features
 
 ## Commands
+
 - `yarn start` - Start development server
 - `yarn start:dev` - Start with hot reload
 - `yarn build` - Build for production

@@ -31,16 +31,20 @@
 ## 🛠️ Установка и запуск
 
 ### Требования
+
 - Node.js (версия 18+)
 - Yarn
 
 ### Установка зависимостей
+
 ```bash
 yarn install
 ```
 
 ### Переменные окружения
+
 Скопируйте `.env.example` в `.env` и настройте под ваши нужды:
+
 ```bash
 cp .env.example .env
 ```
@@ -93,6 +97,7 @@ yarn format
 ## 📚 API документация
 
 После запуска приложения, Swagger документация доступна по адресу:
+
 ```
 http://localhost:3000/api
 ```
@@ -105,20 +110,25 @@ http://localhost:3000/api
 ## 🔧 Конфигурация
 
 ### TypeScript
+
 Конфигурация находится в файлах:
+
 - `tsconfig.json` - Основная конфигурация TypeScript
 - `tsconfig.build.json` - Конфигурация для сборки
 
 ### NestJS CLI
+
 Конфигурация в `nest-cli.json`
 
 ### ESLint & Prettier
+
 - `.eslintrc.js` - Правила линтинга
 - `.prettierrc` - Правила форматирования
 
 ## 📦 Основные зависимости
 
 ### Production
+
 - `@nestjs/common` - Основные NestJS компоненты
 - `@nestjs/core` - Ядро NestJS
 - `@nestjs/platform-express` - Express платформа
@@ -128,6 +138,7 @@ http://localhost:3000/api
 - `class-transformer` - Трансформация данных
 
 ### Development
+
 - `@nestjs/cli` - NestJS CLI
 - `@nestjs/testing` - Утилиты для тестирования
 - `jest` - Тестовый фреймворк
@@ -138,16 +149,19 @@ http://localhost:3000/api
 ## 🎯 Следующие шаги
 
 1. **Добавить базу данных:**
+
    ```bash
    yarn add @nestjs/typeorm typeorm pg
    ```
 
 2. **Добавить аутентификацию:**
+
    ```bash
    yarn add @nestjs/jwt @nestjs/passport passport passport-jwt
    ```
 
 3. **Создать новый модуль:**
+
    ```bash
    yarn nest generate module users
    yarn nest generate controller users
