@@ -2,72 +2,72 @@
 
 ## 📦 Package Manager
 
-**ВСЕГДА ИСПОЛЬЗУЙ YARN, НЕ NPM!**
+**ALWAYS USE YARN, NEVER NPM!**
 
-- Установка пакетов: `yarn add package-name`
-- Установка dev-зависимостей: `yarn add -D package-name`
-- Удаление пакетов: `yarn remove package-name`
-- Установка всех зависимостей: `yarn install`
+- Install packages: `yarn add package-name`
+- Install dev dependencies: `yarn add -D package-name`
+- Remove packages: `yarn remove package-name`
+- Install all dependencies: `yarn install`
 
-❌ **НИКОГДА НЕ ИСПОЛЬЗУЙ:**
+❌ **NEVER USE:**
 
 - `npm install`
 - `npm add`
 - `npm run`
 
-✅ **ВСЕГДА ИСПОЛЬЗУЙ:**
+✅ **ALWAYS USE:**
 
 - `yarn install`
 - `yarn add`
 - `yarn start`
 
-## 🏗️ Архитектура проекта - Блочная структура
+## 🏗️ Project Architecture - Block Structure
 
-### Основной принцип: ОДИН БЛОК = ОДНА ЗАДАЧА
+### Core Principle: ONE BLOCK = ONE TASK
 
-Проект должен быть разделен на отдельные блоки (папки), где каждый блок отвечает за конкретную задачу:
+The project must be divided into separate blocks (folders), where each block is responsible for a specific task:
 
 ```
 src/
-├── ai-agent/           # Блок для AI агента
-├── jira-integration/   # Блок для подключения к Jira
-├── task-analytics/     # Блок для аналитики задач
-├── user-management/    # Блок для управления пользователями
-├── notifications/      # Блок для уведомлений
-└── ...                 # Другие блоки по задачам
+├── ai-agent/           # Block for AI agent
+├── jira-integration/   # Block for Jira integration
+├── task-analytics/     # Block for task analytics
+├── user-management/    # Block for user management
+├── notifications/      # Block for notifications
+└── ...                 # Other task-based blocks
 ```
 
-### Каждый блок должен содержать:
+### Each block must contain:
 
-- Свой модуль
-- Свои контроллеры
-- Свои сервисы
-- Свои DTOs
-- Свои интерфейсы
-- Свои тесты
+- Its own module
+- Its own controllers
+- Its own services
+- Its own DTOs
+- Its own interfaces
+- Its own tests
 
-## 🛠️ Структура эндпойнтов - Один эндпойнт = Одна папка
+## 🛠️ Endpoint Structure - One Endpoint = One Folder
 
-### Критически важно: КАЖДЫЙ ЭНДПОЙНТ В ОТДЕЛЬНОЙ ПАПКЕ!
+### CRITICAL: EACH ENDPOINT IN A SEPARATE FOLDER!
 
-**Для каждого эндпойнта создавай отдельную папку с полным набором файлов:**
+**Create a separate folder with a complete set of files for each endpoint:**
 
 ```
 src/ai-agent/
-├── create-task/          # Эндпойнт POST /ai-agent/create-task
+├── create-task/          # Endpoint POST /ai-agent/create-task
 │   ├── create-task.controller.ts
 │   ├── create-task.service.ts
 │   ├── create-task.dto.ts
 │   ├── create-task.module.ts
 │   ├── create-task.interface.ts
 │   └── create-task.spec.ts
-├── get-task-status/      # Эндпойнт GET /ai-agent/task-status/:id
+├── get-task-status/      # Endpoint GET /ai-agent/task-status/:id
 │   ├── get-task-status.controller.ts
 │   ├── get-task-status.service.ts
 │   ├── get-task-status.dto.ts
 │   ├── get-task-status.module.ts
 │   └── get-task-status.spec.ts
-└── update-task/          # Эндпойнт PUT /ai-agent/update-task/:id
+└── update-task/          # Endpoint PUT /ai-agent/update-task/:id
     ├── update-task.controller.ts
     ├── update-task.service.ts
     ├── update-task.dto.ts
@@ -75,7 +75,7 @@ src/ai-agent/
     └── update-task.spec.ts
 ```
 
-### Пример структуры блока Jira Integration:
+### Example Jira Integration Block Structure:
 
 ```
 src/jira-integration/
@@ -99,52 +99,52 @@ src/jira-integration/
     └── create-jira-issue.spec.ts
 ```
 
-## 📝 Правила именования
+## 📝 Naming Rules
 
-### Папки блоков:
+### Block Folders:
 
-- Используй kebab-case
-- Название должно отражать функциональность
-- Примеры: `ai-agent`, `jira-integration`, `task-analytics`
+- Use kebab-case
+- Name should reflect functionality
+- Examples: `ai-agent`, `jira-integration`, `task-analytics`
 
-### Папки эндпойнтов:
+### Endpoint Folders:
 
-- Используй kebab-case
-- Название должно точно отражать действие эндпойнта
-- Примеры: `create-task`, `get-task-status`, `update-task`, `delete-task`
+- Use kebab-case
+- Name should precisely reflect the endpoint action
+- Examples: `create-task`, `get-task-status`, `update-task`, `delete-task`
 
-### Файлы:
+### Files:
 
-- Используй kebab-case
-- Формат: `[endpoint-name].[type].ts`
-- Примеры:
+- Use kebab-case
+- Format: `[endpoint-name].[type].ts`
+- Examples:
   - `create-task.controller.ts`
   - `get-task-status.service.ts`
   - `update-task.dto.ts`
 
-## 🎯 Основные принципы
+## 🎯 Core Principles
 
-1. **Модульность**: Каждый блок независим
-2. **Изоляция**: Один эндпойнт = одна папка
-3. **Yarn only**: Никогда не используй npm
-4. **Четкая структура**: Каждый файл на своем месте
-5. **Понятные названия**: Название должно говорить за себя
+1. **Modularity**: Each block is independent
+2. **Isolation**: One endpoint = one folder
+3. **Yarn only**: Never use npm
+4. **Clear structure**: Every file in its place
+5. **Descriptive names**: Names should be self-explanatory
 
-## 🚀 Команды для работы
+## 🚀 Working Commands
 
 ```bash
-# Запуск проекта
+# Start project
 yarn start:dev
 
-# Установка зависимостей
+# Install dependencies
 yarn install
 
-# Добавление новой зависимости
+# Add new dependency
 yarn add @nestjs/some-package
 
-# Тестирование
+# Testing
 yarn test
 
-# Сборка
+# Build
 yarn build
 ```
